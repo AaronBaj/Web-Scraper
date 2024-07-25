@@ -17,9 +17,6 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 url = "https://bexar.tx.publicsearch.us/doc/209388995"
 driver.get(url)
 
-wait = WebDriverWait(driver, 10)
-wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-
 last_height = driver.execute_script("return document.body.scrollHeight")
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
